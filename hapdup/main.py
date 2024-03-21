@@ -26,11 +26,11 @@ PEPPER_VARIANT = "pepper_variant"
 
 PEPPER_MODEL_DIR = os.environ["PEPPER_MODEL_DIR"]
 PEPPER_MODEL = {"hifi" : os.path.join(PEPPER_MODEL_DIR, "PEPPER_VARIANT_HIFI_V7.pkl"),
-                 "ont" : os.path.join(PEPPER_MODEL_DIR, "PEPPER_VARIANT_ONT_R941_GUPPY5_SUP_V7.pkl")}
+                 "ont" : os.path.join(PEPPER_MODEL_DIR, "PEPPER_VARIANT_ONT_R10_Q20_V7.pkl")}
 
 MARGIN_CONFIG_DIR = os.environ["MARGIN_CONFIG_DIR"]
 MARGIN_CONFIG = {"hifi" : os.path.join(MARGIN_CONFIG_DIR, "allParams.haplotag.pb-hifi.hapDup.json"),
-                 "ont" : os.path.join(MARGIN_CONFIG_DIR, "allParams.haplotag.ont-r94g507.hapDup.json")}
+                 "ont" : os.path.join(MARGIN_CONFIG_DIR, "allParams.haplotag.ont-r104q20.hapDup.json")}
 
 
 logger = logging.getLogger()
@@ -175,7 +175,7 @@ def main():
 
         reads_arg = None
         if args.rtype == "ont":
-            reads_arg = "--ont_r9_guppy5_sup"
+            reads_arg = "--ont_r10_q20"
         elif args.rtype == "hifi":
             reads_arg = "--hifi"
 
@@ -221,7 +221,7 @@ def main():
 
             reads_arg = None
             if args.rtype == "ont":
-                reads_arg = "--nano-raw"
+                reads_arg = "--nano-hq"
             elif args.rtype == "hifi":
                 reads_arg = "--pacbio-hifi"
 
